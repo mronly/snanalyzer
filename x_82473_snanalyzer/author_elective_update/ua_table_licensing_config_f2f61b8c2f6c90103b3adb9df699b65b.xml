@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="DELETE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_82473_snanalyzer_table</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 19:20:16</sys_created_on>
+        <sys_id>f2f61b8c2f6c90103b3adb9df699b65b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_82473_snanalyzer_table</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_update_name>ua_table_licensing_config_f2f61b8c2f6c90103b3adb9df699b65b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-28 19:20:16</sys_updated_on>
+    </ua_table_licensing_config>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</application>
+        <file_path/>
+        <instance_id>0011c554dbef8cd03050ac44d49619cb</instance_id>
+        <instance_name>dev102670</instance_name>
+        <name>ua_table_licensing_config_f2f61b8c2f6c90103b3adb9df699b65b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config"><ua_table_licensing_config action="DELETE"><is_fulfillment>false</is_fulfillment><license_condition/><license_model>none</license_model><license_roles/><name>x_82473_snanalyzer_table</name><op_delete>true</op_delete><op_insert>true</op_insert><op_update>true</op_update><owner_condition/><sys_class_name>ua_table_licensing_config</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-04-28 19:20:16</sys_created_on><sys_id>f2f61b8c2f6c90103b3adb9df699b65b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_82473_snanalyzer_table</sys_name><sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package><sys_policy/><sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope><sys_update_name>ua_table_licensing_config_f2f61b8c2f6c90103b3adb9df699b65b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-04-28 19:20:16</sys_updated_on></ua_table_licensing_config></record_update>]]></payload>
+        <payload_hash>567217705</payload_hash>
+        <record_name>x_82473_snanalyzer_table</record_name>
+        <reverted_from/>
+        <source>170547882fe890103b3adb9df699b6e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 19:27:10</sys_created_on>
+        <sys_id>ff8817402fac90103b3adb9df699b6ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>171c241e65f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-28 19:27:10</sys_updated_on>
+        <type>Table Subscription Configuration</type>
+        <update_guid>3b8817401aac90109ce6185c8bfec3ec</update_guid>
+        <update_guid_history>3b8817401aac90109ce6185c8bfec3ec:567217705,76f61b8ca96c90102be996bb9228e75c:-1932520035</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-01 16:12:38</sys_created_on>
+        <sys_db_object display_value="" name="ua_table_licensing_config">ua_table_licensing_config</sys_db_object>
+        <sys_id>badad0110cf140999855c649b5f9fe99</sys_id>
+        <sys_metadata>f2f61b8c2f6c90103b3adb9df699b65b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_82473_snanalyzer_table</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_scope_delete display_value="">01b31eaa32304574800c2b294b4f6d41</sys_scope_delete>
+        <sys_update_name>ua_table_licensing_config_f2f61b8c2f6c90103b3adb9df699b65b</sys_update_name>
+        <sys_update_version display_value="ua_table_licensing_config_f2f61b8c2f6c90103b3adb9df699b65b">ff8817402fac90103b3adb9df699b6ec</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-01 16:12:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

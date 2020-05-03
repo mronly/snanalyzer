@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_82473_snanalyzer.AnalyzerUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AnalyzerUtil</name>
+        <script><![CDATA[var AnalyzerUtil = Class.create();
+AnalyzerUtil.prototype = {
+    initialize: function() {
+		this.report.start = new GlideDateTime().getDisplayValue();
+		this.report.instance = gs.getProperty('instance_name');
+		this.item.values.sn_instance_name = gs.getProperty('instance_name');
+		this.payload.items.push(this.item);
+    },
+	transportTo : 'dev102670_1',
+	report : {
+		"start" : 'n/a',
+		"instance" : 'n/a',
+		"end" : 'n/a'
+	},
+	payload : {
+		"items" : [],
+		"relations" : []
+	},
+	item : { "className" : '',
+			"values" : { 
+				"name" : '',
+				"sn_instance_name" : '',
+				"correlation_id" : '' ,
+				"sn_class_name" : ''
+			}
+	},
+	/**SNDOC
+	@name start
+	@description description
+
+	@example
+	var h = new x_82473_snanalyzer.AnalyzerUtil();
+	var res = h.start();
+	gs.debug(JSON.stringify(res, null, 4));
+
+	@returns {type} description
+	*/
+	start: function() {
+		// call table 
+	},
+	/**SNDOC
+	@name writeQueue
+	@description description
+
+	@example
+	var h = new x_82473_snanalyzer.AnalyzerUtil();
+	var res = h.writeQueueEntry({
+		"items" : [{
+			"className" : "x_82473_snanalyzer_table",
+			"values" : {
+				"name" : "__sna__test",
+				"instance" : "test",
+				"correlation_id" : "sna_test"
+			}
+		}]
+	});
+	gs.debug(JSON.stringify(res, null, 4));
+
+	@returns {type} description
+	*/
+	writeQueueEntry: function(payload) {
+		strPayload = JSON.stringify(payload, null, 4);
+		var grQueue = new GlideRecord('x_82473_snanalyzer_queue');
+		grQueue.initialize();
+		grQueue.setValue('payload', strPayload);
+		grQueue.setValue('load_id', 'test');
+		grQueue.setValue('instance', this.report.instance);
+		grQueue.setValue('status', 'queued');
+		grQueue.setValue('transport_to', this.transportTo);
+		grQueue.insert();
+	},
+	
+	callIRE: function (payload) {
+		var jsonUntil = new global.JSON();
+		var input     = jsonUntil.encode(payload);
+		//var output    = sn_cmdb.IdentificationEngine.identifyCI(input);
+		var output    = sn_cmdb.IdentificationEngine.createOrUpdateCI('sna', input);
+		var out       = jsonUntil.decode(output);
+		return out;
+	},
+	/**SNDOC
+	@name generateTrigger
+	@description description
+
+	@param {type} [paramName] - description
+
+	@example
+	var a = x_82473_snanalyzer.AnalyzerUtil();
+	var data = {"name" : "Test load", "script" : "gs.log('SNAnalyser: Test')"};
+	var res = a.generateTrigger(data);
+	gs.debug(JSON.stringify(data, null, 4));
+
+	@returns {type} description
+	*/
+	generateTrigger: function(data) {
+		var grTrigger = new GlideRecord('sys_trigger');
+		grTrigger.initialize();
+		grTrigger.name = 'SNAnalyzer: ' + data.name;
+		grTrigger.next_action = new GlideDateTime().getDisplayValue();
+		grTrigger.trigger_type = 2; // on demand
+		grTrigger.script = data.script;
+		data.triggerSysId = grTrigger.insert();
+	},
+	_runRegEx: function (script, _regExString, output) {
+		try {
+			var arrayUtil = new global.ArrayUtil();
+			var _fields = script.match(new RegExp(_regExString, 'gij'));
+			if(_fields != null) {
+				for(var key in _fields) {
+					var result = _fields[key];
+					if(arrayUtil.contains(output, result) == false) {
+						output.push(result);
+					}
+				}
+			}
+		} catch(e) {
+			gs.error('_runRegEx: ' + _regExString + '\n' + e);
+		}
+	},
+	type: 'AnalyzerUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 18:20:26</sys_created_on>
+        <sys_id>d88887c42f2c90103b3adb9df699b6e3</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>AnalyzerUtil</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_update_name>sys_script_include_d88887c42f2c90103b3adb9df699b6e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-03 12:30:53</sys_updated_on>
+    </sys_script_include>
+</record_update>

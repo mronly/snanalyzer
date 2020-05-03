@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="x_82473_snanalyzer_root" label="Column" max_length="40" name="x_82473_snanalyzer_column" sizeclass="82" type="collection"/>
+</database>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="DELETE" field="discovery_source" table="x_82473_snanalyzer_root" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>discovery_source</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SNAnalyzer</label>
+            <language>en</language>
+            <name>x_82473_snanalyzer_root</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-01 16:25:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>98bb42092f6010103b3adb9df699b64c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-01 16:25:33</sys_updated_on>
+            <value>sns</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>discovery_source</element>
+            <name>x_82473_snanalyzer_root</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-01 16:25:33</sys_created_on>
+            <sys_id>e8cbc6c52f6010103b3adb9df699b601</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>discovery_source</sys_name>
+            <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+            <sys_update_name>sys_choice_x_82473_snanalyzer_root_discovery_source</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-01 16:25:33</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</application>
+        <file_path/>
+        <instance_id>0011c554dbef8cd03050ac44d49619cb</instance_id>
+        <instance_name>dev102670</instance_name>
+        <name>sys_choice_x_82473_snanalyzer_root_discovery_source</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_choice action="INSERT_OR_UPDATE" field="discovery_source" table="x_82473_snanalyzer_root" version="3"><sys_choice action="INSERT_OR_UPDATE"><dependent_value/><element>discovery_source</element><hint/><inactive>false</inactive><label>SNAnalyzer</label><language>en</language><name>x_82473_snanalyzer_root</name><sequence/><sys_created_by>admin</sys_created_by><sys_created_on>2020-05-01 16:25:33</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>98bb42092f6010103b3adb9df699b64c</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-05-01 16:25:33</sys_updated_on><value>sns</value></sys_choice><sys_choice_set action="INSERT_OR_UPDATE"><element>discovery_source</element><name>x_82473_snanalyzer_root</name><sys_class_name>sys_choice_set</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-05-01 16:25:33</sys_created_on><sys_id>e8cbc6c52f6010103b3adb9df699b601</sys_id><sys_mod_count>0</sys_mod_count><sys_name>discovery_source</sys_name><sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package><sys_policy/><sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope><sys_update_name>sys_choice_x_82473_snanalyzer_root_discovery_source</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-05-01 16:25:33</sys_updated_on></sys_choice_set></sys_choice></record_update>]]></payload>
+        <payload_hash>-859894290</payload_hash>
+        <record_name>Root.Discovery source</record_name>
+        <reverted_from/>
+        <source>170547882fe890103b3adb9df699b6e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-01 16:25:33</sys_created_on>
+        <sys_id>68cbc2092f6010103b3adb9df699b613</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>171d10eb2310000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-01 16:25:33</sys_updated_on>
+        <type>Choice list</type>
+        <update_guid>60cbc209576010101ed47fb8666cdc13</update_guid>
+        <update_guid_history>60cbc209576010101ed47fb8666cdc13:-859894290,af3942c1cb60101029c3bfa4d9a60d3b:-393134576,919ad34433ac90106f9014d7d2c88c9f:2079106286</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-01 16:26:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_choice_set">sys_choice_set</sys_db_object>
+        <sys_id>e8cbc6c52f6010103b3adb9df699b601</sys_id>
+        <sys_metadata>e8cbc6c52f6010103b3adb9df699b601</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>discovery_source</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_scope_delete display_value="">01b31eaa32304574800c2b294b4f6d41</sys_scope_delete>
+        <sys_update_name>sys_choice_x_82473_snanalyzer_root_discovery_source</sys_update_name>
+        <sys_update_version display_value="sys_choice_x_82473_snanalyzer_root_discovery_source">68cbc2092f6010103b3adb9df699b613</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-01 16:26:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_index">
+    <sys_index action="INSERT_OR_UPDATE">
+        <col_name_string>sn_instance_name</col_name_string>
+        <index_col_name element="sn_instance_name" name="x_82473_snanalyzer_root">6ca1ba052f6410103b3adb9df699b6a1</index_col_name>
+        <logical_table_name>x_82473_snanalyzer_root</logical_table_name>
+        <sys_class_name>sys_index</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2020-05-01 19:15:11</sys_created_on>
+        <sys_id>2592f6c52f6410103b3adb9df699b6f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_82473_snanalyzer_root</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_update_name>sys_index_x_82473_snanalyzer_root_sn_instance_name</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2020-05-01 19:15:11</sys_updated_on>
+        <table display_value="Root" name="x_82473_snanalyzer_root">0b49c6c12f6010103b3adb9df699b669</table>
+        <unique_index>false</unique_index>
+    </sys_index>
+</record_update>

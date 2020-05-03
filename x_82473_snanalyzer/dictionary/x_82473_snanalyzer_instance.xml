@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Instance" max_length="40" name="x_82473_snanalyzer_instance" sizeclass="0" type="collection">
+        <element label="Correlation Id" max_length="40" name="correlation_id" type="string"/>
+        <element label="Last scan" max_length="40" name="last_scan" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+    </element>
+</database>

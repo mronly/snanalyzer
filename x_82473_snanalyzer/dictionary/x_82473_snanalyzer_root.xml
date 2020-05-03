@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="cmdb_ci" label="Root" max_length="40" name="x_82473_snanalyzer_root" sizeclass="91" type="collection">
+        <element label="SN Class Name" mandatory="true" max_length="60" name="sn_class_name" type="string"/>
+        <element label="SN Instance Name" mandatory="true" max_length="60" name="sn_instance_name" type="string"/>
+    </element>
+</database>

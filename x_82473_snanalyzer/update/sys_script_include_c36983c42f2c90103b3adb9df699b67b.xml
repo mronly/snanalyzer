@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_82473_snanalyzer.AnalyzerScript</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AnalyzerScript</name>
+        <script><![CDATA[var AnalyzerScript = Class.create();
+AnalyzerScript.prototype = Object.extendsObject(x_82473_snanalyzer.AnalyzerUtil, {
+    initialize: function() {
+    },
+	/**SNDOC
+	@name _analyseScriptTestRegex
+	@description description
+
+	@param {type} [paramName] - description
+
+	@example
+	var grSI = new GlideRecord('sys_script_include');
+	grSI.setLimit(2);
+	grSI.query();
+	while(grSI.next()) {
+		gs.debug(grSI.name);
+		var h = new x_82473_snanalyzer.AnalyzerScript();
+		var res = h._analyseScriptTestRegex(grSI, 'script' , '(?<=(\\s)new(\\s))(\\w+\\.)?([0-9A-Za-z_]+)');
+		gs.debug(JSON.stringify(res, null, 4));
+	}
+
+	@returns {type} description
+	*/
+	_analyseScriptTestRegex: function(grRecord, fieldName, _regExString) {
+		var script = grRecord.getValue(fieldName);
+		var report = {
+			//"name" : grRecord.getValue([grRecord.sys_meta.display]),
+			"name" : grRecord.getValue('name'),
+			"sysId" : grRecord.getValue('sys_id'),
+			"TestResult" :[]
+		}
+
+		this._runRegEx(script, _regExString, report.TestResult);
+		return report;
+	},
+	/**SNDOC
+	@name _analyseScript
+	@description description
+
+	@param {type} [paramName] - description
+
+	@example
+	var grSI = new GlideRecord('sys_script_include');
+	grSI.get('eee51271eb223100c46ac2eef106fed4');
+	
+	var h = new x_82473_snanalyzer.AnalyzerScript();
+	var res = h._analyseScript(grSI, 'script');
+	gs.debug(JSON.stringify(res, null, 4));
+
+	@returns {type} description
+	*/
+	 _analyseScript: function(grRecord, fieldName) {
+		var script = grRecord.getValue(fieldName);
+		var report = {
+			//"name" : grRecord.getValue([grRecord.sys_meta.display]),
+			"name" : grRecord.getValue('name'),
+			"sysId" : grRecord.getValue('sys_id'),
+			"GlideObjects" : [],
+			"Objects" : []
+		}
+
+		// search used objects initializations
+		// eg. (?<=(\s)new(\s))(\s)*(\w+\.)?([0-9A-Za-z_]+)
+		var _regExString= "(?<=(\\s)new(\\s))(\\s)*(\\w+\\.)?([0-9A-Za-z_]+)";
+		this._runRegEx(script, _regExString, report.Objects);
+
+		// var regEx = /var(.*)=(\s)+?new(\s)+Glide(Record|Aggregate)(Secure)?(\s)*\((.*)\)/gi;
+		var regString = "var(.*)=(\\s)+?new(\\s)+Glide(Record|Aggregate)(Secure)?(\\s)*\\((.*)\\)";
+		var regEx = new RegExp(regString, 'gi');
+		var res = script.match(regEx);
+		if(global.JSUtil.nil(res)) {
+			res = [];
+		} 
+		for(var i=0;i<res.length;i++) {
+			var line = res[i];
+			var _table = line.match(/(?<=(\"|\'))([0-9A-Za-z_]+)/gij);
+			var _var = line.match(/(?<=var(\s))([0-9A-Za-z_]+)(?=(\s)?\=)/gij);
+			var glideObject = {
+				"table" : _table,
+				"variable" : _var,
+				"fields" : {}
+			}
+			glideObject.fields = this._findDetails(script, _var);
+			report.GlideObjects.push(glideObject);
+		}
+		return report;
+	},
+	
+	_findDetails: function(script, variableTable) {
+		var report = {
+			"variable" : variableTable.toString().trim(),
+			"setter" : [],
+			"query" : [],
+			"order" : []
+		};
+
+		// search fields setter
+		// eg. (?<=grSwInstanceRemove\.(setValue\((\s)?(\'|\"))?)([0-9A-Za-z_]+)(?=((\s*)?\=)|(\'|\"))
+		var _regExString = "(?<=" + report.variable + "\\.(setValue\\((\\s)?(\\'|\\\"))?)([0-9A-Za-z_]+)(?=((\\s*)?\\=)|(\\'|\\\"))";
+		this._runRegEx(script, _regExString, report.setter); 
+
+		// query Fields
+		// eg. (?<=grSwInstanceRemove\.(add(.*)?Query(\s)?\((\s)?(\'|\")))([0-9A-Za-z_]+)
+		var _regExString = "(?<=" + report.variable + "\\.(add(.*)?Query(\\s)?\\((\\s)?(\\'|\\\")))([0-9A-Za-z_]+)";
+		this._runRegEx(script, _regExString, report.query);
+
+		// orderBy Fields
+		// eg. (?<=grSwInstanceRemove\.(orderBy(Desc)?(\s)*?\((\s)*?(\'|\")))([0-9A-Za-z_]+)
+		var _regExString = "(?<=" + report.variable + "\\.(orderBy(Desc)?(\\s)*?\\((\\s)*?(\\'|\\\")))([0-9A-Za-z_]+)";
+		this._runRegEx(script, _regExString, report.order);
+		return report;
+	},
+
+    type: 'AnalyzerScript'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 18:22:17</sys_created_on>
+        <sys_id>c36983c42f2c90103b3adb9df699b67b</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>AnalyzerScript</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_update_name>sys_script_include_c36983c42f2c90103b3adb9df699b67b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-02 09:34:52</sys_updated_on>
+    </sys_script_include>
+</record_update>

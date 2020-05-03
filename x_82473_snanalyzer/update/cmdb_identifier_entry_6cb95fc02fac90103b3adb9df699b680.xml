@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="cmdb_identifier_entry">
+    <cmdb_identifier_entry action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <allow_fallback>false</allow_fallback>
+        <allow_null_attribute>false</allow_null_attribute>
+        <attributes>sn_instance_name,correlation_id</attributes>
+        <condition/>
+        <exact_count_match>false</exact_count_match>
+        <hybrid_entry_ci_criterion_attributes/>
+        <identifier display_value="x_82473_snanalyzer_root">18a95bc02fac90103b3adb9df699b614</identifier>
+        <order>100</order>
+        <sys_class_name>cmdb_identifier_entry</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 19:32:08</sys_created_on>
+        <sys_id>6cb95fc02fac90103b3adb9df699b680</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_update_name>cmdb_identifier_entry_6cb95fc02fac90103b3adb9df699b680</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-01 19:14:55</sys_updated_on>
+        <table>x_82473_snanalyzer_root</table>
+    </cmdb_identifier_entry>
+</record_update>

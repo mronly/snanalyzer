@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 19:31:09</sys_created_on>
+        <sys_id>5e7997c02fac90103b3adb9df699b669</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_82473_snanalyzer_table.x_82473_snanalyzer.table_user</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_security_acl display_value="x_82473_snanalyzer_table">8e7997c02fac90103b3adb9df699b666</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_5e7997c02fac90103b3adb9df699b669</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-28 19:31:09</sys_updated_on>
+        <sys_user_role display_value="x_82473_snanalyzer.table_user" name="x_82473_snanalyzer.table_user">cef6df4c2f6c90103b3adb9df699b69a</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</application>
+        <file_path/>
+        <instance_id>0011c554dbef8cd03050ac44d49619cb</instance_id>
+        <instance_name>dev102670</instance_name>
+        <name>sys_security_acl_role_5e7997c02fac90103b3adb9df699b669</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-04-28 19:31:09</sys_created_on><sys_id>5e7997c02fac90103b3adb9df699b669</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_82473_snanalyzer_table.x_82473_snanalyzer.table_user</sys_name><sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package><sys_policy/><sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope><sys_security_acl display_value="x_82473_snanalyzer_table">8e7997c02fac90103b3adb9df699b666</sys_security_acl><sys_update_name>sys_security_acl_role_5e7997c02fac90103b3adb9df699b669</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-04-28 19:31:09</sys_updated_on><sys_user_role display_value="x_82473_snanalyzer.table_user" name="x_82473_snanalyzer.table_user">cef6df4c2f6c90103b3adb9df699b69a</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>40408740</payload_hash>
+        <record_name>x_82473_snanalyzer_table.x_82473_snanalyzer.table_user</record_name>
+        <reverted_from/>
+        <source>170547882fe890103b3adb9df699b6e8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-04-28 19:31:09</sys_created_on>
+        <sys_id>967997c02fac90103b3adb9df699b66c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>171c2458c190000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-04-28 19:31:09</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>de7997c0deac901005b3b686d5a4a06b</update_guid>
+        <update_guid_history>de7997c0deac901005b3b686d5a4a06b:40408740</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_82473_snanalyzer_table.x_82473_snanalyzer.table_user">3ec88e412f6010103b3adb9df699b6be</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-01 16:12:36</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>246da1574bdc44ec8ce291cea69e1a64</sys_id>
+        <sys_metadata>5e7997c02fac90103b3adb9df699b669</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_82473_snanalyzer_table.x_82473_snanalyzer.table_user</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_parent display_value="">8e7997c02fac90103b3adb9df699b666</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_scope_delete display_value="">01b31eaa32304574800c2b294b4f6d41</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_5e7997c02fac90103b3adb9df699b669</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_5e7997c02fac90103b3adb9df699b669">967997c02fac90103b3adb9df699b66c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-01 16:12:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_82473_snanalyzer.AnalyzerDBTable</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AnalyzerDBTable</name>
+        <script><![CDATA[var AnalyzerDBTable = Class.create();
+AnalyzerDBTable.prototype = Object.extendsObject(x_82473_snanalyzer.AnalyzerUtil, {
+	/**SNDOC
+	@name tableAnalyzer
+	@description description
+
+	@param {type} [paramName] - description
+
+	@example
+	var h = new x_82473_snanalyzer.AnalyzerDBTable();
+	var res = h.tableAnalyzer();
+	gs.debug(JSON.stringify(res, null, 4));
+
+	@returns {type} description
+	*/
+	tableAnalyzer: function(limit) {
+		// get all tables
+		if(limit==null) {
+			limit = 10;
+		}
+		var grSource = new GlideRecord('sys_db_object');
+		grSource.orderBy('sys_id');
+		grSource.setLimit(limit);
+		grSource.query();
+		while(grSource.next()) {
+			var payload = JSON.parse(JSON.stringify(this.payload));
+			newTable = payload.items[0];
+			newTable.className = 'x_82473_snanalyzer_table';
+			newTable.values.name = grSource.name + '';
+			newTable.values.correlation_id = grSource.sys_id + '';
+			newTable.values.sn_class_name = grSource.sys_class_name + '';
+			
+			// parent table
+			var refField = 'super_class';
+			var superClass = grSource[refField] + '';
+			if(superClass != '' ) {
+				var pSuper = this._buildRefItem(grSource, refField, 'x_82473_snanalyzer_table');
+				payload.items.push(pSuper);
+				var rel2sTable = {
+					"parent" : 0,
+					"child" : (payload.items.length - 1),
+					"type": "Extends::Extended by"
+				};
+				payload.relations.push(rel2sTable);
+			}
+			// scope
+			if(grSource.hasOwnProperty('sys_scope') == true){
+				var pScope = this._buildRefItem(grSource, 'sys_scope', 'x_82473_snanalyzer_scope');
+				payload.items.push(pScope);
+			}
+			var rel2Table = {
+				"parent" : (payload.items.length - 1),
+				"child" : 0,
+				"type": "Contains::Contained by"
+			};
+			payload.relations.push(rel2Table);
+			
+			var res = this.writeQueueEntry(payload);
+		}
+	},
+	/**SNDOC
+	@name columnAnalyzer
+	@description description
+
+	@param {type} [paramName] - description
+
+	@example
+	var grTable = new GlideRecord('sys_db_object'):
+	grTable.get('f8b0498b2f3300103b3adb9df699b6a4'):
+	var h = new x_82473_snanalyzer.AnalyzerDBTable();
+	var res = h.columnAnalyzer(grTable);
+	gs.debug(JSON.stringify(res, null, 4));
+
+	@returns {type} description
+	*/
+	columnAnalyzer: function (grTable) {
+		var grSource = new GlideRecord('sys_dictionary');
+		grSource.addQuery('name', grTable.name + '');
+		grSource.query();
+		
+		while(grSource.next()) {
+			var payload = JSON.parse(JSON.stringify(this.payload));
+			newColumn = payload.items[0];
+			newColumn.className = 'x_82473_snanalyzer_column';
+			newColumn.values.name = grSource.element + '';
+			newColumn.values.correlation_id = grSource.sys_id + '';
+			newColumn.values.sn_class_name = grSource.sys_class_name + '';
+			
+			var table = JSON.parse(JSON.stringify(this.item));
+			table.className = 'x_82473_snanalyzer_table';
+			table.values.name = grTable.name + '';
+			table.values.correlation_id = grTable.sys_id + '';
+			table.values.sn_class_name = grTable.sys_class_name + '';
+			payload.items.push(table);
+			
+			var rel2Table = {
+				"parent" : (payload.items.length - 1),
+				"child" : 0,
+				"type": "Contains::Contained by"
+			};
+			payload.relations.push(rel2Table);
+			
+			var res = this.writeQueueEntry(payload);
+		}
+		
+	},
+	_buildRefItem: function (grSource, refField, className) {
+		var refFieldPaylod = JSON.parse(JSON.stringify(this.item));
+		refFieldPaylod.className = className;
+		refFieldPaylod.values.name = grSource[refField].name + '';
+		refFieldPaylod.values.correlation_id = grSource[refField].sys_id + '';
+		refFieldPaylod.values.sn_class_name = grSource[refField].sys_class_name + '';
+		return refFieldPaylod;
+	},
+	
+    type: 'AnalyzerDBTable'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-03 06:03:19</sys_created_on>
+        <sys_id>beef06a92fe0d0103b3adb9df699b65a</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>AnalyzerDBTable</sys_name>
+        <sys_package display_value="ServiceNow Analyser" source="x_82473_snanalyzer">906efe002fe890103b3adb9df699b6cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="ServiceNow Analyser">906efe002fe890103b3adb9df699b6cd</sys_scope>
+        <sys_update_name>sys_script_include_beef06a92fe0d0103b3adb9df699b65a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-03 12:37:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

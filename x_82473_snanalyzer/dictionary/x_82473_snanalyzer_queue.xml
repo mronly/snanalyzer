@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Queue" max_length="40" name="x_82473_snanalyzer_queue" sizeclass="0" type="collection">
+        <element label="Instance" mandatory="true" max_length="40" name="instance" type="string"/>
+        <element label="Load Id" mandatory="true" max_length="40" name="load_id" type="string"/>
+        <element label="Message" max_length="4000" name="message" type="string"/>
+        <element label="payload" mandatory="true" max_length="4000" name="payload" type="string"/>
+        <element choice="3" default="queued" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="queued" sequence="1" value="queued"/>
+                <element inactive_on_update="false" label="WIP" sequence="2" value="wip"/>
+                <element inactive_on_update="false" label="ERROR" sequence="3" value="error"/>
+                <element inactive_on_update="false" label="processed" sequence="3" value="processed"/>
+                <element inactive_on_update="false" label="waiting for transport" sequence="5" value="wft"/>
+            </choice>
+        </element>
+        <element label="transport to" mandatory="true" max_length="40" name="transport_to" type="string"/>
+    </element>
+</database>
